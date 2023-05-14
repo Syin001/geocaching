@@ -4,7 +4,7 @@
 
 - Steven YIN
 - Thomas MONIATTE
-- Ibrahim FOUFA
+- Ibrahime FOUFA
 
 ## Fonctionnalités
 
@@ -20,7 +20,7 @@ Thomas:
 - token
 - documentation API REST
 
-Ibrahim:
+Ibrahime:
 - géolocalisation
 - classement des joueurs
 - css page de connections, d'inscription et classement
