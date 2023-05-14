@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(https://images.photowall.com/products/60671/political-world-map-1.jpg?h=699&q=85);
+    background-size: cover;
+    animation: pan-image 15s linear infinite;
+}
+
+
+
+@keyframes pan-image {    
+    0% {
+      background-position: 36% 42%;
+      background-size: 300%;
+    }
+    
+    20% {
+      background-position: 30% 35%;
+      background-size: 300%;
+    }
+    
+    20.0001% { /* -- View 2 -- */
+      background-position: 60% 85%;
+      background-size: 500%;
+    }
+    
+    40% {
+      background-position: 49% 81%;
+      background-size: 500%;
+    }
+    
+    40.0001% { /* -- View 3 -- */
+      background-position: 80% 42%;
+      background-size: 400%;
+    }
+    
+    60% {
+      background-position: 84% 33%;
+      background-size: 400%;
+    }
+    
+    60.0001% { /* -- View 4 -- */
+      background-position: 0% 0%;
+      background-size: 400%;
+    }
+    
+    80% {
+      background-position: 15% 4%;
+      background-size: 400%;
+    }
+    
+    80.0001% { /* -- View 5 -- */
+      background-position: 80% 10%;
+      background-size: 400%;
+    }
+    
+    100% {
+      background-position: 72% 14%;
+      background-size: 400%;
+    }
+}
+
+.row {
+    min-height: 50vh;
+    width: 80vw;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+}
+
+.box {
+  display: flex;
+  padding: 5%;
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputbox {
+    position: relative; 
+    width: 100%;
+    margin-top: 5px;
+    border-bottom: 2px solid #fff;
+    margin-top: 20px;
+} 
+
+.inputbox label {
+    position: absolute;
+    top: 50px;
+    left: 5px;
+    transform: translateY(-100%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label {
+    top:-3px;
+}
+
+.inputbox input {
+    width:100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+
+.error {
+  color: red;
+}
+
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+html input[type=button], input[type=reset], input[type=submit] {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.register {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+

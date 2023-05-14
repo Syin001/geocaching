@@ -1,0 +1,19 @@
+{
+  "name": "js_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serveur.js",
+  "scripts": {
+    "test": "nodemon serveur.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongod": "^2.0.0",
+    "mongodb": "^5.4.0",
+    "nodemon": "^2.0.22"
+  }
+}

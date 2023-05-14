@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    margin: 10px 0px;
+}
+
+.podium {
+    display: flex;
+    list-style-type: decimal;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.top10 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+}
+
+.top10 > li {
+    width: 100%;
+    border: solid 1px grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.user {
+    text-align: center;
+    padding: 5px 5px;
+    box-sizing: border-box;
+}
+
+.user > .pseudo {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user > .score {
+    font-size: 16px;
+}
+
+.top-user {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.top-score {
+    font-size: 14px;
+}

@@ -1,0 +1,44 @@
+<body>
+    <div class="container">
+        <h2>ADD CACHE</h2>
+        <form [formGroup]="angForm" (ngSubmit)="onSubmit()">
+            <mat-form-field hintLabel="Max 20 characters" appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput #input maxlength="20" type="text" formControlName="title">
+                <mat-hint align="end">{{input.value.length}}/20</mat-hint>
+                <mat-error *ngIf="title?.invalid">Title required</mat-error>
+            </mat-form-field>
+            <mat-form-field hintLabel="Max 250 characters" appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput #textarea maxlength="250" class="desc" formControlName="description" style="height: 200px; resize:none;"></textarea>
+                <mat-hint align="end">{{textarea.value.length}}/250</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Difficulty</mat-label>
+                <mat-select class="selectdiff" value="" formControlName="difficulty" required>
+                    <mat-option value="">Select Option</mat-option>
+                    <mat-option value="Easy">Easy</mat-option>
+                    <mat-option value="Normal">Normal</mat-option>
+                    <mat-option value="Hard">Hard</mat-option>
+                    <mat-option value="Hell">Hell</mat-option>
+                </mat-select>
+                <mat-error *ngIf="difficulty?.invalid">difficulty required</mat-error>
+            </mat-form-field>
+            <div class="line">
+                <mat-form-field appearance="outline">
+                    <mat-label >Latitude</mat-label>
+                    <input id="Latitude" matInput type="text" formControlName="latitude">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label >Longitude</mat-label>
+                    <input id = "Longitude" matInput type="text" formControlName="longitude">
+                </mat-form-field>
+            </div>
+            <div class="sub">
+                <button mat-stroked-button style="width: 50%; background: white; border: solid 1px black">Submit</button>
+            </div>
+        </form>
+    </div> 
+    <app-navbar></app-navbar>
+</body>
+

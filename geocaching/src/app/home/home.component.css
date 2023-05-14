@@ -1,0 +1,40 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 100vh;
+}
+  
+.map-border {
+  border: 5px solid orange;
+  height: 100%; 
+}
+  
+#map {
+  height: 100%;
+}
+
+.Easy {
+  filter: hue-rotate(275deg);
+}
+
+.Normal {
+  filter: hue-rotate(170deg);
+}
+
+@keyframes hell {
+  0% {
+    filter: hue-rotate(10deg) invert(100%);
+  }
+  50% {
+    transform: hue-rotate(190deg) invert(100%);
+  }
+  100% {
+      transform: hue-rotate(10deg) invert(100%);
+  }
+}
