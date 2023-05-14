@@ -18,6 +18,7 @@ Steven:
 Thomas:
 - Tout le serveur
 - token
+- documentation API REST
 
 Ibrahim:
 - géolocalisation
