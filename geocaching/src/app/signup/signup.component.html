@@ -6,7 +6,7 @@
                 <h2>Signup</h2>
                 <div class="inputbox">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="text" placeholder="email" name="login" formControlName="email">
+                    <input type="text" placeholder="Email" name="login" formControlName="email">
                 </div>
                 <div *ngIf="submitted && email?.errors" class="alert">
                     <div *ngIf="email?.errors?.['required']" class="error">Email is required</div>
@@ -14,22 +14,22 @@
                 </div>
                 <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" placeholder="password" name="password" formControlName="password">
+                    <input type="password" placeholder="Password" name="password" formControlName="password">
                 </div>
                 <div *ngIf="submitted && password?.errors" class="alert">
-                    <div *ngIf="password?.errors?.['required']" class="error">password is required</div>
+                    <div *ngIf="password?.errors?.['required']" class="error">Password is required</div>
                 </div>
                 <div class="inputbox">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" placeholder="password confirmation" name="confpassword"
+                    <input type="password" placeholder="Password confirmation" name="confpassword"
                         formControlName="confpassword">
                 </div>
                 <div *ngIf="confpassword?.invalid && (confpassword?.dirty || confpassword?.touched)" class="alert">
-                    <div *ngIf="confpassword?.errors?.['required']" class="error">password is required</div>
+                    <div *ngIf="confpassword?.errors?.['required']" class="error">Password is required</div>
                     <div *ngIf="confpassword?.errors?.['confirmedValidator']" class="error">Passwords did not match
                     </div>
                 </div>
-                <input type="submit" name="submit" value="signup">
+                <input type="submit" name="submit" value="Signup">
                 <div class="register">
                     <div *ngIf="submitted" class="alert">
                         <div *ngIf="gtoken === 'e'" class="error">

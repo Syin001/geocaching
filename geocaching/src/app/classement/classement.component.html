@@ -1,17 +1,31 @@
 <body>
-    <h1>Classement</h1>
-    <div class="podium">
-        <div class="user" *ngFor="let item of player; let i = index">
-            <div class="pseudo" *ngIf="i < 3">{{ item.email }}</div>
-            <div class="score" *ngIf="i < 3">Score : {{ item.len }}</div>
+    <div class="podium-container">
+        <div class="podium-step podium-step-2">
+            <div class="player-name">{{player[1].email}}</div>
+            <p> 2 </p>
+            <div class="player-score">Score: {{player[1].len}}</div>
+
+        </div>
+        <div class="podium-step podium-step-1">
+            <div class="player-name">{{player[0].email}}</div>
+            <p> 1 </p>
+            <div class="player-score">Score: {{player[0].len}}</div>
+
+
+        </div>
+        <div class="podium-step podium-step-3">
+            <div class="player-name">{{player[2].email}}</div>
+            <p> 3 </p>
+            <div class="player-score">Score: {{player[2].len}}</div>
+
         </div>
     </div>
 
-    <div class="top10">
-        <li *ngFor="let item of top10; let i = index">
-            <span class="top-user">{{ item.email }}</span>
-            <span class="top-score">Score : {{ item.len }}</span>
-        </li>
+    <div class="top10" *ngFor="let item of top10; let i = index">
+        <div class="top-player">{{i + 4}}th: {{ item.email }}
+            <div class="top-score">Score: {{ item.len }}</div>
+        </div>
     </div>
     <app-navbar></app-navbar>
+
 </body>

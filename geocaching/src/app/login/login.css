@@ -70,8 +70,9 @@ body {
 }
 
 .row {
-    min-height: 50vh;
-    width: 80vw;
+    position: relative;
+    width: 95vw;
+    height:60vh;
     background: transparent;
     border: 2px solid rgba(255,255,255,0.5);
     border-radius: 20px;
@@ -175,3 +176,8 @@ html input[type=button], input[type=reset], input[type=submit] {
     font-weight: 600;
 }
 
+.error {
+    width: 100%;
+    color: red;
+    font-size: small;
+}
