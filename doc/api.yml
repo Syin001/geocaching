@@ -1,0 +1,228 @@
+openapi: 3.0.3
+info:
+  title: Geocaching API
+  description: |-
+    After login, the user get a JsonWebToken, the need to put in every request they send.
+    The database used is Atlas
+
+  version: 1.0.11
+tags:
+  - name: Login
+    description: login/ sign in
+  - name: caches
+    description: Every cache related request
+  - name: ranking
+    description: Acces ranking
+paths:
+  /login:
+    post:
+      tags:
+        - Login
+      summary: sign in
+      description: Add a new user to the database
+      requestBody:
+        description: Json with user data
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/user"
+      responses:
+        "200":
+          description: Succes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/token"
+        "400":
+          description: Invalid data, user already in the database
+    patch:
+      tags:
+        - Login
+      summary: Login
+      description: Login
+      requestBody:
+        description: Json with user data
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/user"
+      responses:
+        "200":
+          description: Succes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/token"
+        "400":
+          description: Invalid data, user not registered in the database
+
+  /caches:
+    get:
+      tags:
+        - caches
+      summary: Find caches
+      description: if no id is provided, the top 50 caches will be returned
+
+      parameters:
+        - name: id
+          in: query
+          description: id of the desired cache
+          required: false
+          explode: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation, array of caches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/caches"
+        "201":
+          description: If you used an id, a modify key will be added.If modify is 1, the request is from the owner of the cache, 0 the requester can validate the cache and -1 the cache is already validated.
+
+    post:
+      tags:
+        - caches
+      summary: Add a new cache
+      description: Add a new cache
+      requestBody:
+        description: Json with cache data
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/cachedata"
+
+      responses:
+        "200":
+          description: successful operation
+    patch:
+      tags:
+        - caches
+      summary: Update a cache
+      description: Update a cache
+      requestBody:
+        description: Json with cache data
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/cachedata"
+
+      responses:
+        "200":
+          description: successful operation
+    delete:
+      tags:
+        - caches
+      summary: Delete a cache
+      description: Delete a cache
+      parameters:
+        - name: id
+          in: query
+          description: id of the desired cache
+          required: false
+          explode: true
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: successful operation
+
+    head:
+      tags:
+        - caches
+      summary: Validate a cache
+      description: Validate a cache
+      parameters:
+        - name: id
+          in: query
+          description: id of the desired cache
+          required: false
+          explode: true
+          schema:
+            type: string
+
+      responses:
+        "200":
+          description: successful operation
+  /ranking:
+    get:
+      tags:
+        - ranking
+      summary: Get the top 10
+      description: Get the top 10
+      responses:
+        "200":
+          description: successful operation
+components:
+  schemas:
+    user:
+      type: object
+      properties:
+        email:
+          type: string
+          example: name@email.com
+        password:
+          type: string
+          example: "12345"
+
+    token:
+      type: object
+      properties:
+        token:
+          type: string
+          example: "123456789azertyuiop-sdfgghjklmù"
+    caches:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "123456"
+        title:
+          type: string
+          example: "name"
+        description:
+          type: string
+          example: desc
+        longitude:
+          type: string
+          example: "12,34°"
+        latitude:
+          type: string
+          example: "12,34°"
+        difficulty:
+          type: string
+          example: Easy
+        user:
+          type: object
+          $ref: "#/components/schemas/user"
+    cachedata:
+      type: object
+      properties:
+        title:
+          type: string
+          example: "name"
+        description:
+          type: string
+          example: desc
+        longitude:
+          type: string
+          example: "12,34°"
+        latitude:
+          type: string
+          example: "12,34°"
+        difficulty:
+          type: string
+          example: Easy
+    ranking:
+      type: object
+      properties:
+        email:
+          type: string
+          example: "name"
+        len:
+          type: integer
+          example: 10
