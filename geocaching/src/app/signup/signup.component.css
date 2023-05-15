@@ -66,6 +66,9 @@ input:valid ~::placeholder {
     top:-3px;
 }
 
+form {
+  width: 100%;
+}
 
 .inputbox input {
   width:100%;
