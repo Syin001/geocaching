@@ -1,0 +1,141 @@
+nav {
+    position: fixed;
+    height: 20vh;
+    width: 100vw;
+    background: transparent;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1000;
+    transition: 0.5s ease-out;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: top;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.button {
+    box-shadow: inset 0 1px 0 0 #ffffff;
+    background: #ffffff linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    border-radius: 50%;
+    border: 1px solid #dcdcdc;
+    display: flex;
+    cursor: pointer;
+    color: #666666;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 5px 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #ffffff;
+    outline: 0;
+    width: 3.2rem;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+}
+
+.button:first-child {
+    transition-delay: 0.1s;
+}
+
+.button:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.button:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.button:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.button:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.activebutton {
+    box-shadow: inset 0 1px 0 0 #dcecfb;
+    background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    border: 1px solid #84bbf3;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #528ecc;
+}
+
+#menu-toggle {
+    height: 5rem;
+    width: 5rem;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3rem;
+    transform: translateX(-50%);
+    object-fit: fill;
+    border: none;
+    border-radius: 5rem;
+    outline: none;
+    font-size: 1.5rem;
+    box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
+    cursor: pointer;
+    z-index: 10001;
+    transition: 0.5s ease-in-out;
+}
+
+#menu-toggle > fa-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    transition: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 400ms;
+}
+
+#menu-toggle:hover {
+  transform: translateX(-50%) scale(1.04);
+}
+
+#menu-toggle:active {
+  transform: translateX(-50%) scale(0.96);
+}
+
+#nav[data-nav="true"] > nav {
+    transform: translateY(100%);
+}
+
+#nav[data-nav="true"] > nav > .nav-bar >.button {
+    transform: translateY(300%);
+}
+  
+#nav[data-nav="true"] > #menu-toggle {
+  opacity: 1;
+}
+
+#nav[data-nav="true"] > #menu-toggle > .open {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#nav[data-nav="false"] > #menu-toggle {
+    transform: translate(-50%, 50%) scale(0.7);
+}
+
+#nav[data-nav="false"] > #menu-toggle > .close {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+

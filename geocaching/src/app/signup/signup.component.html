@@ -1,0 +1,48 @@
+<body>
+    <div class="row">
+        <div class="box">
+            <form [formGroup]="angForm" (ngSubmit)="onSubmit()">
+                <h1>Geocacher</h1>
+                <h2>Signup</h2>
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" placeholder="Email" name="login" formControlName="email">
+                </div>
+                <div *ngIf="submitted && email?.errors" class="alert">
+                    <div *ngIf="email?.errors?.['required']" class="error">Email is required</div>
+                    <div *ngIf="email?.errors?.['email']" class="error">Email must be a valid email address</div>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" placeholder="Password" name="password" formControlName="password">
+                </div>
+                <div *ngIf="submitted && password?.errors" class="alert">
+                    <div *ngIf="password?.errors?.['required']" class="error">Password is required</div>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" placeholder="Password confirmation" name="confpassword"
+                        formControlName="confpassword">
+                </div>
+                <div *ngIf="confpassword?.invalid && (confpassword?.dirty || confpassword?.touched)" class="alert">
+                    <div *ngIf="confpassword?.errors?.['required']" class="error">Password is required</div>
+                    <div *ngIf="confpassword?.errors?.['confirmedValidator']" class="error">Passwords did not match
+                    </div>
+                </div>
+                <input type="submit" name="submit" value="Signup">
+                <div class="register">
+                    <div *ngIf="submitted" class="alert">
+                        <div *ngIf="gtoken === 'e'" class="error">
+                            Email already used
+                        </div>
+                    </div>
+                    <p>Already have an Account ? <a class="button" routerLink="/login" routerLinkActive="activebutton"
+                            ariaCurrentWhenActive="page">Click Here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
