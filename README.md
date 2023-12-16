@@ -1,26 +1,17 @@
 # geocaching
 
-## Etudiants
+## Description
 
-- Steven YIN
-- Thomas MONIATTE
-- Ibrahime FOUFA
+Projet d'application Geocaching. 
 
 ## Fonctionnalités
 
-Steven:
-- Barre de navigations
-- Carte
-- Formulaire
-- Récupérer les données
+- page de connexion.d'inscription.
+- Barre de navigations.
+- Carte pour visualiser les geocaches.
+- Formulaire pour ajouter les geochaches.
+- Classement des joueurs.
 
+## Base de donnée
 
-Thomas:
-- Tout le serveur
-- token
-- documentation API REST
-
-Ibrahime:
-- géolocalisation
-- classement des joueurs
-- css page de connections, d'inscription et classement
+Pour utiliser l'application, vous aurez besoin une base de donnée (Exemple: MongoDB).
